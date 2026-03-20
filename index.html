@@ -4,10 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WSET-3 Interactive Study Guide</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0f172a;
+            --surface: #111827;
+            --surface-2: #1f2937;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+            --link: #7dd3fc;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            background: radial-gradient(circle at top right, #1e293b 0%, var(--bg) 45%, #020617 100%);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 1.25rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        body > div, main {
+            width: min(900px, 100% - 1rem);
+            background: linear-gradient(180deg, rgba(15,23,42,0.95), rgba(17,24,39,0.95));
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.45);
+            padding: 1.2rem 1.3rem;
+        }
+        h1 {
+            color: #f8fafc;
+            margin-top: 0;
+            letter-spacing: -0.02em;
+        }
+        p {
+            color: var(--text);
+            margin: .8rem 0;
+        }
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(125,211,252,0.6);
+        }
+        a:hover { color: #cbd5e1; border-bottom-color: #cbd5e1; }
+    </style>
 </head>
 <body>
     <h1>WSET-3 Interactive Study Guide</h1>
     <p>This will be a multi-modal, mobile friendly web app to allow students to to threoughly prepare for the <a href="https://www.wsetglobal.com/qualifications/wset-level-3-award-in-wines/">WSET-LEVEL-3 certification</a> test.</p>
-    <p>While this project will focus on this materials the goal is to build an engine that can be fed JSON testing data for any subject so it becomes more of a studying platform.</p>
+    <p>While this project will focus on these materials, the goal is to build an engine that can be fed JSON testing data for any subject so it becomes more of a studying platform.</p>
 </body>
 </html>

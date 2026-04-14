@@ -55,6 +55,24 @@
             max-width: 900px;
              margin: 0 auto;
         }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .screenshot-grid img {
+            width: 100%;
+            display: block;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        @media (max-width: 900px) {
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -63,9 +81,21 @@
     <p>This will be a multi-modal, mobile friendly web app to allow students to to threoughly prepare for the <a href="https://www.wsetglobal.com/qualifications/wset-level-3-award-in-wines/">WSET-LEVEL-3 certification</a> test.</p>
     <p>While this project will focus on these materials, the goal is to build an engine that can be fed JSON testing data for any subject so it becomes more of a studying platform.</p>
     <h2>Work Log</h2> 
-    <strong>Week 1 - March 30 - April 6</strong>   
+    <h3>Week 1 - March 30 - April 6</h3>
     This week I focus on establishing core functionality for the app. I will be building a simple quiz engine that can take in JSON data and generate interactive quizzes. The goal is to have a basic version of the quiz engine up and running by the end of the week, allowing me to test it with some sample questions from the WSET-3 curriculum. I will also be working on the overall design and user interface to ensure it's mobile-friendly and easy to navigate.
     <img src="docs/img/app-flow.png" alt="App Flow Diagram" style="width:100%; margin-top:1rem; border-radius:8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+   
+<h3>Week 2 – April 6–13</h3>
+
+<p>This week I moved from design into the build phase. With the architecture and components already defined, I worked through the build in a deliberate order: engine first, then contexts, shared components, and finally all five views. By the end of the week, the production build was clean, the test suite was up to 28 passing tests, and the bundle landed around 106kb gzipped.</p>
+
+<p>I started with the core quiz engine, including session construction, answer evaluation, attempt tracking, session completion, shuffling, and proportional sampling. All of this was built and validated as pure functions before touching the UI. From there, I moved into the interface layer and built out each view: Dashboard with streak tracking, per-topic accuracy, and study mode entry; Quiz with a full state machine from configuration to results; Flashcards using CSS 3D flip cards with Fisher-Yates shuffling and shared attempt tracking; Media organized by type with accordion expansion and multi-source playback; and Results with session selection, score summary, topic breakdown, and expandable question review.</p>
+
+ <div class="screenshot-grid">
+        <img src="docs/img/ss-1.png" alt="Screenshot 1">
+        <img src="docs/img/ss-2.png" alt="Screenshot 2">
+        <img src="docs/img/ss-3.png" alt="Screenshot 3">
+    </div>
 </section>
 </body>
 </html>

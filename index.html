@@ -50,7 +50,9 @@
             border-bottom: 1px dashed rgba(125,211,252,0.6);
         }
         a:hover { color: #cbd5e1; border-bottom-color: #cbd5e1; }
-
+        a.btn {display: inline-block; background-color: var(--accent); color: var(--bg); padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; border: none; 
+            transition: background-color 0.2s; 
+            margin:20px auto;}
         section{
             max-width: 900px;
              margin: 0 auto;
@@ -61,7 +63,7 @@
             gap: 1rem;
             margin: 1.5rem 0;
         }
-        .screenshot-grid img {
+        img {
             width: 100%;
             display: block;
             border-radius: 14px;
@@ -78,6 +80,7 @@
 <body>
     <section>
     <h1>WSET-3 Interactive Study Guide</h1>
+    <p><a target="_blank" href="https://webtechinstructor.github.io/study-platform/" class="btn">Final Project</a> - This is what I'll present next week.</p>
     <p>This will be a multi-modal, mobile friendly web app to allow students to to threoughly prepare for the <a href="https://www.wsetglobal.com/qualifications/wset-level-3-award-in-wines/">WSET-LEVEL-3 certification</a> test.</p>
     <p>While this project will focus on these materials, the goal is to build an engine that can be fed JSON testing data for any subject so it becomes more of a studying platform.</p>
     <h2>Work Log</h2> 
@@ -95,7 +98,16 @@
         <img src="docs/img/ss-1.png" alt="Screenshot 1">
         <img src="docs/img/ss-2.png" alt="Screenshot 2">
         <img src="docs/img/ss-3.png" alt="Screenshot 3">
-    </div>
+</div>
+
+<h3>Week 3 – April 14–20</h3>
+<p>This week the platform moved from a working local build into production. After resolving a content path issue caused by the GitHub Pages base URL, the app deployed successfully and is now live. With the app running in a real environment, the focus shifted to content and presentation.
+On the UI side, the entire styling layer was refactored. Inline styles moved to a centralized CSS custom property system, DM Sans was added as the application font, and a full dark mode implementation was built using a single media query block. The color system is now token-based, meaning global changes touch one place rather than dozens of component files.</p>
+<p>Content infrastructure was the other major focus. A reusable question generation prompt was developed and refined, incorporating schema rules, quality constraints, topicId mapping, concept duplication prevention, and batch size discipline. The subject configuration was expanded from 8 to 12 topics to support new content areas including viticulture, vinification, tasting methodology, and wines of the world. The media library was rebuilt from scratch with 10 region maps, 6 podcast stubs, and 6 PDF stubs, and the map preview component was updated to render actual images with a graceful error fallback. Question bank generation is now underway using the new prompt workflow.</p>
+ <div class="screenshot">
+        <img src="docs/img/week-3.png" alt="Screenshot 1">
+</div>
 </section>
+
 </body>
 </html>
